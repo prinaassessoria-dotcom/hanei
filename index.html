@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08152E">
+  <meta name="description" content="HANEI Comunicação Visual. Ideias que ganham forma. Soluções em comunicação visual para marcas, espaços e negócios.">
+  <title>HANEI | Comunicação Visual</title>
+  <style>
+    :root{
+      --navy:#08152E; --navy-2:#102442; --blue:#0EA5E9; --blue-2:#45C2F4;
+      --silver:#AEB8C5; --ink:#172235; --muted:#657184; --paper:#F5F7FA;
+      --white:#fff; --line:rgba(8,21,46,.12); --radius:22px;
+      --shadow:0 24px 70px rgba(8,21,46,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1160px,calc(100% - 48px));margin:auto}
+    .topbar{background:var(--navy);color:#dce6f2;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    .topbar .container{display:flex;justify-content:space-between;gap:18px;padding:10px 0}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(8,21,46,.08)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:42px;height:42px;display:grid;place-items:center}
+    .brand-mark svg{width:100%;height:100%}
+    .brand-name{font-size:23px;font-weight:750;letter-spacing:.16em;color:var(--navy);line-height:1}
+    .brand-sub{font-size:9px;letter-spacing:.22em;color:#687487;margin-top:6px;font-weight:700}
+    .nav-links{display:flex;align-items:center;gap:32px;font-size:13px;font-weight:650;color:#39465a}
+    .nav-links a:hover{color:#078fc9}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:999px;background:var(--blue);color:white;font-size:13px;font-weight:750;letter-spacing:.01em;border:1px solid var(--blue);transition:.2s}
+    .nav-cta:hover,.button:hover{background:#087fb5;transform:translateY(-2px)}
+    .menu-toggle{display:none;border:0;background:transparent;color:var(--navy);font-size:25px}
+    .hero{position:relative;overflow:hidden;background:var(--navy);color:white;padding:100px 0 94px}
+    .hero:before{content:"";position:absolute;width:660px;height:660px;border:1px solid rgba(69,194,244,.18);border-radius:50%;right:-150px;top:-300px;box-shadow:0 0 0 70px rgba(69,194,244,.035),0 0 0 140px rgba(69,194,244,.025)}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:64px}
+    .eyebrow{display:flex;align-items:center;gap:12px;color:#71d2fa;font-size:11px;font-weight:750;letter-spacing:.2em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:34px;height:1px;background:var(--blue)}
+    h1{font-size:clamp(48px,6.3vw,82px);line-height:1.02;letter-spacing:-.055em;margin:24px 0 24px;font-weight:720;max-width:700px}
+    h1 span{color:#54c8f5}
+    .hero-copy{max-width:530px;color:#c3cfdf;font-size:17px;line-height:1.8;margin:0 0 32px}
+    .hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+    .text-link{font-size:13px;font-weight:700;color:#e5edf6}
+    .text-link span{color:#54c8f5;margin-left:8px}
+    .hero-art{min-height:390px;position:relative;display:grid;place-items:center}
+    .orbit{position:absolute;width:360px;height:360px;border:1px solid rgba(84,200,245,.28);border-radius:50%}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(84,200,245,.16);border-radius:50%;inset:32px}
+    .orbit:after{inset:72px}
+    .hero-emblem{position:relative;width:220px;height:220px;display:grid;place-items:center;border-radius:34px;background:linear-gradient(145deg,#132b4c,#071329);box-shadow:0 30px 80px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.12);transform:rotate(-7deg)}
+    .hero-emblem svg{width:130px;height:130px;filter:drop-shadow(0 8px 18px rgba(14,165,233,.28))}
+    .floating-note{position:absolute;right:0;bottom:22px;padding:15px 19px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(12px);border-radius:14px;color:#e4edf7;font-size:12px;letter-spacing:.06em}
+    .floating-note strong{display:block;color:#6bd1fa;font-size:10px;letter-spacing:.18em;margin-bottom:4px}
+    .intro{padding:94px 0 100px}
+    .intro-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:90px;align-items:start}
+    .section-kicker{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#078fc9}
+    h2{font-size:clamp(34px,4vw,51px);line-height:1.12;letter-spacing:-.045em;color:var(--navy);margin:15px 0 22px}
+    .intro-copy{font-size:18px;color:#536075;line-height:1.85;margin:0;max-width:700px}
+    .meaning-card{margin-top:30px;padding:22px 24px;border-left:3px solid var(--blue);background:#f2f7fb;border-radius:0 14px 14px 0}
+    .meaning-card .jp{font-size:25px;color:var(--navy);font-weight:700;letter-spacing:.12em}
+    .meaning-card p{margin:4px 0 0;color:#657184;font-size:13px}
+    .services{background:var(--paper);padding:94px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+    .section-head p{max-width:410px;color:#667286;margin:0 0 7px;font-size:14px}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .service-card{background:white;border:1px solid rgba(8,21,46,.07);border-radius:18px;padding:26px 23px;min-height:220px;transition:.25s}
+    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .service-icon{width:43px;height:43px;border-radius:13px;background:#e8f6fc;color:#078fc9;display:grid;place-items:center;margin-bottom:25px}
+    .service-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .service-card h3{font-size:17px;color:var(--navy);margin:0 0 9px}
+    .service-card p{font-size:13px;color:#718095;line-height:1.7;margin:0}
+    .statement{padding:95px 0;background:white}
+    .statement-panel{position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(115deg,#0a1932,#102a4b);padding:62px 65px;color:white}
+    .statement-panel:after{content:"H";position:absolute;right:45px;top:-100px;font-size:390px;line-height:1;font-weight:800;color:rgba(255,255,255,.035);letter-spacing:-.1em}
+    .statement-panel h2{color:white;max-width:700px;font-size:clamp(36px,4.8vw,58px);position:relative;z-index:1}
+    .statement-panel p{color:#c1cede;max-width:580px;margin:0 0 28px;position:relative;z-index:1}
+    .statement-panel .button{position:relative;z-index:1}
+    .process{padding:20px 0 100px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;margin-top:38px}
+    .step{border-top:1px solid var(--line);padding-top:20px}
+    .step-no{color:#0b9bd7;font-size:11px;letter-spacing:.16em;font-weight:800}
+    .step h3{font-size:19px;color:var(--navy);margin:10px 0 8px}
+    .step p{font-size:14px;color:#6c788b;margin:0;max-width:300px}
+    .contact{background:#f3f6f9;padding:88px 0}
+    .contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:center}
+    .contact h2{max-width:550px}
+    .contact-copy{color:#687589;max-width:520px}
+    .contact-box{background:white;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 15px 40px rgba(8,21,46,.06)}
+    .contact-box strong{display:block;color:var(--navy);font-size:17px;margin-bottom:8px}
+    .contact-box p{color:#6c788b;font-size:13px;margin:0 0 18px}
+    .contact-box .button{width:100%;cursor:pointer}
+    footer{background:#061126;color:#aebbd0;padding:30px 0}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px}
+    .footer-brand{color:white;font-size:16px;letter-spacing:.18em;font-weight:750}
+    .footer-brand small{display:block;font-size:9px;letter-spacing:.2em;color:#8798af;margin-top:4px}
+    .footer-note{font-size:11px;color:#8594a9;text-align:right}
+    .contact-details{margin-top:28px;color:#667286;font-size:14px}
+    .contact-details p{margin:9px 0}
+    .contact-details strong{color:var(--navy)}
+    .contact-details a{color:#078fc9;font-weight:750}
+    .contact-form{background:white;border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 15px 40px rgba(8,21,46,.06);display:grid;gap:10px}
+    .contact-form label{font-size:12px;font-weight:750;color:var(--navy);margin-top:5px}
+    .contact-form label span{font-weight:500;color:#8792a2}
+    .contact-form input,.contact-form select,.contact-form textarea{width:100%;border:1px solid #dce2e9;border-radius:10px;padding:13px 14px;font:inherit;font-size:14px;color:var(--ink);background:#fff;outline:none;transition:border .2s,box-shadow .2s}
+    .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(14,165,233,.12)}
+    .contact-form textarea{resize:vertical;min-height:95px}
+    .form-submit{width:100%;cursor:pointer;margin-top:8px}
+    .form-privacy{font-size:11px;color:#8792a2;line-height:1.55;margin:0;text-align:center}
+    .form-feedback{font-size:12px;color:#087fb5;margin:0;text-align:center;min-height:1em}
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr .75fr;gap:25px}.hero-art{min-height:320px}.orbit{width:290px;height:290px}.hero-emblem{width:175px;height:175px}
+      .service-grid{grid-template-columns:repeat(2,1fr)}.intro-grid{gap:45px}
+    }
+    @media(max-width:680px){
+      .container{width:min(100% - 36px,560px)}.topbar .container{justify-content:center;text-align:center}.topbar .container span:last-child{display:none}
+      .nav{height:70px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;padding:20px 24px 24px;background:white;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.nav-links.open{display:flex}.nav-cta{display:none}
+      .hero{padding:70px 0 58px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;margin-top:10px}.orbit{width:260px;height:260px}.hero-emblem{width:160px;height:160px}.hero-emblem svg{width:100px;height:100px}.floating-note{right:4px;bottom:0}
+      .intro,.services,.statement,.contact{padding:70px 0}.intro-grid,.contact-grid{grid-template-columns:1fr;gap:25px}.contact-form{padding:23px}.section-head{display:block}.section-head p{margin-top:12px}.service-grid{gap:12px}.service-card{padding:21px 18px;min-height:210px}
+      .statement-panel{padding:40px 27px}.statement-panel:after{right:-20px;font-size:270px}.steps{grid-template-columns:1fr;gap:24px}.footer-row{align-items:flex-start;flex-direction:column}.footer-note{text-align:left}
+    }
+    @media(max-width:390px){h1{font-size:46px}.service-grid{grid-template-columns:1fr}.service-card{min-height:auto}.hero-actions{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>Comunicação visual com intenção</span><span>Curitiba · Paraná</span></div></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="HANEI início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><path d="M20 16V84M80 16V84M20 50H80" stroke="#08152E" stroke-width="13" stroke-linecap="square"/><path d="M13 69L86 27" stroke="#0EA5E9" stroke-width="12" stroke-linecap="square"/></svg>
+        </span>
+        <span><span class="brand-name">HANEI</span><span class="brand-sub">COMUNICAÇÃO VISUAL</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#conceito" onclick="closeMenu()">A Hanei</a>
+        <a href="#solucoes" onclick="closeMenu()">Soluções</a>
+        <a href="#processo" onclick="closeMenu()">Como trabalhamos</a>
+        <a href="#contato" onclick="closeMenu()">Contato</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5541999500066?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto%20de%20comunica%C3%A7%C3%A3o%20visual.">Fale pelo WhatsApp <span>↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">HANEI · Comunicação visual</div>
+          <h1>Ideias que<br><span>ganham forma.</span></h1>
+          <p class="hero-copy">Criamos soluções de comunicação visual que dão presença às marcas, valorizam espaços e tornam cada projeto impossível de ignorar.</p>
+          <div class="hero-actions">
+            <a class="button" href="#solucoes">Conheça as soluções <span>↗</span></a>
+            <a class="text-link" href="#conceito">Conheça a Hanei <span>↓</span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Símbolo gráfico da Hanei">
+          <div class="orbit"></div>
+          <div class="hero-emblem">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M20 15V85M80 15V85M20 50H80" stroke="#E9F2FA" stroke-width="11" stroke-linecap="square"/><path d="M12 70L87 27" stroke="#19B6F0" stroke-width="12" stroke-linecap="square"/></svg>
+          </div>
+          <div class="floating-note"><strong>繁栄 · HANEI</strong>Prosperidade em movimento</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="conceito">
+      <div class="container intro-grid">
+        <div>
+          <div class="section-kicker">A essência da marca</div>
+          <h2>Mais do que comunicar. É deixar presença.</h2>
+        </div>
+        <div>
+          <p class="intro-copy">HANEI nasce da ideia de transformar conceitos em presença visual. Unimos criatividade, precisão e cuidado na execução para criar soluções que valorizam a identidade de cada negócio.</p>
+          <div class="meaning-card">
+            <div class="jp">繁栄</div>
+            <strong>Hanei · Prosperidade</strong>
+            <p>Referência à palavra japonesa associada à prosperidade, ao florescimento e ao crescimento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="solucoes">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">O que fazemos</div><h2>Soluções que dão forma<br>à sua marca.</h2></div>
+          <p>Do primeiro conceito à aplicação final, cada detalhe contribui para uma comunicação clara, consistente e marcante.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 20V5h18v15M3 9h18M7 5v4m10-4v4M7 20v-6h10v6"/></svg></div>
+            <h3>Fachadas e letreiros</h3><p>Projetos para destacar empresas e criar uma presença marcante desde o primeiro olhar.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM7 4h10M8 11h8M8 15h5"/></svg></div>
+            <h3>Impressão digital</h3><p>Materiais gráficos para comunicar ofertas, ideias, campanhas e informações com impacto.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 16l2-6h14l2 6v3H3zM6 10l2-4h8l2 4M7 19v1m10-1v1M7 14h.01M17 14h.01"/></svg></div>
+            <h3>Adesivação</h3><p>Aplicações em veículos, vitrines e superfícies para ampliar a visibilidade da marca.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 21V4h14v17M8 8h8M8 12h8M8 16h5M3 21h18"/></svg></div>
+            <h3>Sinalização e displays</h3><p>Orientação visual e comunicação de ambientes com organização e unidade estética.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="container">
+        <div class="statement-panel">
+          <div class="section-kicker">A diferença está nos detalhes</div>
+          <h2>Uma marca forte merece uma apresentação à altura.</h2>
+          <p>Seja para atrair olhares, orientar pessoas ou valorizar um espaço, a comunicação visual certa transforma a maneira como uma empresa é percebida.</p>
+          <a class="button" href="#contato">Solicite seu orçamento <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="processo">
+      <div class="container">
+        <div class="section-kicker">Nosso processo</div>
+        <h2>Clareza em cada etapa.</h2>
+        <div class="steps">
+          <article class="step"><div class="step-no">01 / ENTENDER</div><h3>Ouvimos sua necessidade</h3><p>Conhecemos o objetivo, o espaço e a mensagem que sua marca precisa transmitir.</p></article>
+          <article class="step"><div class="step-no">02 / DESENVOLVER</div><h3>Desenhamos a solução</h3><p>Definimos materiais, formatos e caminhos visuais adequados ao projeto.</p></article>
+          <article class="step"><div class="step-no">03 / REALIZAR</div><h3>Damos forma à ideia</h3><p>Transformamos o projeto em uma aplicação visual pronta para marcar presença.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-kicker">Vamos conversar</div>
+          <h2>Conte o que você precisa.</h2>
+          <p class="contact-copy">Preencha os dados e escolha enviar sua solicitação pelo WhatsApp. A mensagem será preparada para você revisar antes de enviar.</p>
+          <div class="contact-details">
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5541999500066" target="_blank" rel="noopener noreferrer">(41) 99950-0066 ↗</a></p>
+            <p><strong>Localização:</strong> Curitiba – PR</p>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label for="clientName">Seu nome</label>
+          <input id="clientName" name="name" type="text" placeholder="Como podemos chamar você?" autocomplete="name" required>
+
+          <label for="clientCompany">Empresa <span>(opcional)</span></label>
+          <input id="clientCompany" name="company" type="text" placeholder="Nome da empresa" autocomplete="organization">
+
+          <label for="clientProduct">O que você precisa?</label>
+          <select id="clientProduct" name="product" required>
+            <option value="" disabled selected>Selecione uma solução</option>
+            <option>Fachada, letreiro ou luminoso</option>
+            <option>Placas e sinalização</option>
+            <option>Impressão digital (banner, lona, adesivo)</option>
+            <option>Adesivação de vitrines ou ambientes</option>
+            <option>Envelopamento de veículo</option>
+            <option>Displays e materiais promocionais</option>
+            <option>Projeto personalizado</option>
+            <option>Outro assunto / preciso de orientação</option>
+          </select>
+
+          <label for="clientPhone">Telefone / WhatsApp</label>
+          <input id="clientPhone" name="phone" type="tel" placeholder="(41) 99999-9999" autocomplete="tel" required>
+
+          <label for="clientMessage">Como podemos ajudar? <span>(opcional)</span></label>
+          <textarea id="clientMessage" name="message" rows="4" placeholder="Conte brevemente sobre seu projeto, medidas ou prazo."></textarea>
+
+          <button class="button form-submit" type="submit">Enviar pelo WhatsApp <span>↗</span></button>
+          <p class="form-privacy">Ao clicar, o WhatsApp será aberto com sua mensagem preenchida. Você poderá revisar e confirmar o envio.</p>
+          <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="footer-brand">HANEI<small>COMUNICAÇÃO VISUAL</small></div>
+      <div class="footer-note">繁栄 · Prosperidade, crescimento e transformação.<br>© <span id="year"></span> HANEI. Todos os direitos reservados.<br>Site produzido por <strong>Prina Assessoria</strong>.</div>
+    </div>
+  </footer>
+  <script>
+    function toggleMenu(){
+      const nav=document.getElementById('navLinks');
+      const btn=document.querySelector('.menu-toggle');
+      const open=nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded',String(open));
+      btn.textContent=open?'×':'☰';
+    }
+    function closeMenu(){
+      const nav=document.getElementById('navLinks');
+      const btn=document.querySelector('.menu-toggle');
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.textContent='☰';
+    }
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function(event){
+      event.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const company = document.getElementById('clientCompany').value.trim();
+      const product = document.getElementById('clientProduct').value;
+      const phone = document.getElementById('clientPhone').value.trim();
+      const message = document.getElementById('clientMessage').value.trim();
+      const lines = [
+        'Olá, HANEI! Gostaria de solicitar um orçamento.',
+        '',
+        'Nome: ' + name,
+        company ? 'Empresa: ' + company : '',
+        'Projeto: ' + product,
+        'Telefone: ' + phone,
+        message ? 'Detalhes: ' + message : ''
+      ].filter(Boolean);
+      const url = 'https://wa.me/5541999500066?text=' + encodeURIComponent(lines.join('\\n'));
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>
